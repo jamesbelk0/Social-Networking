@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { getAllUsers, createUser, getUserById, updateUser, deleteUser} = require('../../controllers/user-controller');
+const { getAllUsers, createUser, getUserById, updateUser, deleteUser, newFriend, deleteFriend} = require('../../controllers/user-controller');
 
 // /api/users (GET, POST)
 router
-    .route('/users')
+    .route('/')
     .get(getAllUsers)
     .post(createUser)
 // /api/users/:id (GET, PUT, DELETE)    
@@ -15,8 +15,8 @@ router
 // remove a users associateds thoughts when deleted       
 
 router
-    .route('/userId/friends/:friendId')
-    .post(newFriend)
-    .delete(deleteFriend)
+    .route('/:id/friends/:friendId')
+    // .post(newFriend)
+    // .delete(deleteFriend)
 
 module.exports = router;    
