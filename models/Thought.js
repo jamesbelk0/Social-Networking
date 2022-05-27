@@ -1,5 +1,4 @@
 const { Schema, model, Types } = require('mongoose');
-const validate = require('mongoose-validator');
 const dateFormat = require('../utils/dateFormat');
 
 const ReactionSchema = new Schema(
@@ -10,8 +9,9 @@ const ReactionSchema = new Schema(
         },
         reactionBody: {
             type: String,
-            required: true
-            //280 Character Maximum
+            required: true,
+            min: 1,
+            max: 280
         },
         username: {
             type: String,
@@ -37,7 +37,8 @@ const ThoughtSchema = new Schema(
         thoughtText: {
             type: String,
             required: true,
-            // must be between 1 and 280 characters
+            min: 1,
+            max: 280
         },
         createdAt: {
             type: Date,
@@ -62,8 +63,6 @@ const ThoughtSchema = new Schema(
 ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 })
-
-
 
 const Thought = model('Thought', ThoughtSchema)
 

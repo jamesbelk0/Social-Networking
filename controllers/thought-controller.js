@@ -1,10 +1,19 @@
 const { Thought, User } = require('../models');
 
 const thoughtController = {
-    // // get all thoguhts
-    // getAllThoughts({ params, body }, res {
-
-    // });
+    // get all thoguhts
+    getAllThoughts({ params, body }, res) {
+        User.findOne({})
+        .populate({
+            path: 'thoughts',
+        })
+        .sort({ _id: -1 })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(400).json(err);
+        });
+    },
     // add thought (comment) to user
     addThought({ params, body }, res) {
         console.log(body);
@@ -75,7 +84,9 @@ addReaction({ params, body}, res) {
         )
         .then(dbUserData => res.json(dbUserData))
         .catch(err => res.json(err));
-    }
+    },
+
+
 };
 
 module.exports = thoughtController;
