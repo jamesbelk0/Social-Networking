@@ -45,19 +45,6 @@ const userController = {
         } catch(err) {
             res.json(err);
         }
-        // console.log(body);
-        // User.create(body)
-        //     .then(dbUserData => {
-        //         if (!dbUserData) {
-        //             res.status(404).json({ message: 'No user was created' });
-        //             return;
-        //         }
-        //         res.json(dbUserData);
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //         res.status(400).json(err);
-        //     });
     },
 
     // update user
