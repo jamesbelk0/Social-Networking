@@ -21,15 +21,16 @@
 https://github.com/jamesbelk0/Social-Networking
 
 ## Link to screenshot/media:
-A link to the video can be found here [Youtube](https://youtu.be/8ChKWiqj8OI)
+A link to the video can be found here [Youtube](https://youtu.be/XKMbeGJePgY)
 
 ## Description
-
+Basic Social Media template using Insomnia to check the routes. Create users with individual thoughts (comments) and other users reactions (replys).
 
 ## Usage
-
+npm start
 ## Contributor
 James Belk
+Office Hours and Luis Rodriges for my tutor hour
 
 ## Questions
 If there are any issues or questions, please contact at:
